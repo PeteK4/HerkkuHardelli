@@ -9,6 +9,9 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .logo {
@@ -18,10 +21,12 @@ body {
   width: 150%;
   height: 160%;
   transform: translateX(-50%) translateY(-80%);
+  pointer-events: none;
 }
 
 .logo-loppu {
   animation: none !important;
+  pointer-events: none;
   z-index: 2;
   margin: 0px;
   width: 150%;
@@ -34,6 +39,7 @@ body {
   width: 6%;
   top: 575px;
   right: 5px;
+  pointer-events: none;
   animation: none !important;
 }
 
