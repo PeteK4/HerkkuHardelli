@@ -1,0 +1,539 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background-image: url("./kuvat/tausta.webp");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+.logo {
+  animation: none !important;
+  z-index: 2;
+  margin: 0px;
+  width: 150%;
+  height: 160%;
+  transform: translateX(-50%) translateY(-80%);
+}
+
+.logo-loppu {
+  animation: none !important;
+  z-index: 2;
+  margin: 0px;
+  width: 150%;
+  height: 160%;
+  transform: scale(.45) rotate(-35deg) translate(-100%, -290%);
+}
+
+.pklogo {
+  position: absolute;
+  width: 6%;
+  top: 575px;
+  right: 5px;
+  animation: none !important;
+}
+
+.musiikki-info {
+  display: none;
+  position: absolute;
+  left: 1%;
+  bottom: 0%;
+  color: white;
+  font-size: .8em;
+}
+
+.valikko {
+  display: block;
+  position: absolute;
+  top: 220px;
+  left: 150px;
+  width: 500px;
+  height: 140px;
+  padding-bottom: 25px;
+  border: 6px solid #ffffff;
+  border-radius: 10px;
+  background-color: #178a77;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  opacity: .95;
+}
+
+.valikko-radiorivi {
+  display: block;
+  position: absolute;
+  top: 410px;
+  left: 150px;
+  width: 480px;
+  height: 25px;
+  padding: 10px;
+  border: 6px solid #ffffff;
+  border-radius: 10px;
+  background-color: #178a77;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  opacity: .95;
+}
+
+.mobiili {
+  display: none;
+}
+
+.mobiili-vali {
+  margin-left: 20px;
+}
+
+
+.valikko-radiorivi label:hover {
+  cursor: url('./kuvat/nuoli.webp'), auto;
+}
+
+.ohje {
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+.loppuinfo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.vasen {
+  flex: 1;
+  text-align: left;
+}
+
+.oikea {
+  flex: 1;
+  text-align: right;
+}
+
+#loppupisteet, #lopputaso {
+  text-align: center;
+  margin: 0px;
+  font-size: 7em;
+  line-height: 0.5em;
+}
+
+.lopputxt-vasen {
+  margin: 32px;
+  padding-left: 50px;
+  font-size: 2em;
+}
+
+.lopputxt-oikea {
+  margin: 32px;
+  padding-right: 40px;
+  font-size: 2em;
+}
+
+.uusipeli-ruutu {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  width: 500px;
+  height: 270px;
+  border: 6px solid #ffffff;
+  border-radius: 10px;
+  background-color: #178a77;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+button {
+  cursor: url("./kuvat/kasi.webp"), auto;
+  margin: 0px 60px;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 120px;
+  height: 30px;
+  border: solid 2px #3f3f3f;
+  background-color: #dfdfdd;
+  border-radius: 20px;
+  animation: venytaX 1s ease-in-out infinite;
+}
+
+button:hover {
+  color: rgb(177, 177, 177);
+  background-color: #fafafa;
+  box-shadow: 0px 0px 20px white;
+  border: solid 2px #ffffff;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]+label::before {
+  display: inline-block;
+  margin-left: 5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff; 
+  border-radius: 50%; 
+  margin-right: 5px;
+  animation: none;
+  content: "";
+  cursor: url("./kuvat/kasi.webp"), auto;
+}
+
+input[type="radio"]:checked+label::before {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff; 
+  box-shadow: 0px 0px 5px white;
+  animation: suurenna .3s ease-in-out infinite;
+  cursor: url("./kuvat/kasi.webp"), auto;
+}
+
+#cr {
+  cursor: url("./kuvat/kasi.webp"), auto;
+}
+
+input {
+  cursor: url("./kuvat/kasi.webp"), auto;
+}
+
+#pelialue {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  border: 10px solid #ffffff;
+  background-image: url("./kuvat/pelitausta2.webp");
+  background-size: 100% 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#pelialue img {
+  position: absolute;
+  animation: pyorita 10s linear infinite
+}
+
+#pistetaso {
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  margin: 10px;
+  font-size: 4rem;
+  color: white;
+  width: calc(100% - 20px);
+  opacity: .9;
+}
+
+@keyframes pyorita {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes venytaX {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes suurenna {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* Mobiilit 992 ---------------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  
+  .valikko {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    height: 140px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    opacity: .95;
+  }
+
+  .valikko-radiorivi {
+    display: block;
+    position: absolute;
+    top: 560px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 30px;
+    padding: 10px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    opacity: .95;
+  }
+
+  .mobiili {
+    display: none;
+  }
+
+  .mobiili-vali {
+    margin-left: -14px;
+  }
+  
+  #loppupisteet, #lopputaso {
+    text-align: center;
+    font-size: 3em !important;
+    line-height: 0.5em;
+  }
+
+  .logo {
+    animation: none !important;
+    z-index: 2;
+    margin: 0px;
+    width: 120%;
+    height: 120%;
+    transform: translateX(-50%) translateY(-90%);
+  }
+
+    .logo-loppu {
+    animation: none !important;
+    z-index: 2;
+    margin: 0px;
+    width: 150%;
+    height: 160%;
+    transform: scale(.65) rotate(-20deg) translate(-55%, -190%);
+  }
+
+  .pklogo {
+    position: absolute;
+    width: 8%;
+    top: 96%;
+    right: 3px;
+    animation: none !important;
+  }
+
+  .musiikki-info {
+    display: none;
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    color: white;
+    font-size: .6em;
+  }
+
+  .uusipeli-ruutu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .ohje {
+    font-size: 1.6em;
+  }
+
+  #loppupisteet {
+    margin: 15px 0px;
+    font-size: 6em;
+    line-height: .7em
+    }
+    
+    #loppupisteet, #lopputaso {
+    display: inline;
+    margin:0px 40px;
+    font-size: 2em;
+    line-height: .7em
+    }
+
+  .lopputxt-vasen {
+    margin: 2px;
+    padding: 20px 20px 10px 20px;
+    font-size: 1.3em;
+  }
+  
+  .lopputxt-oikea {
+    margin: 2px;
+    padding: 20px 20px 10px 0px;
+    font-size: 1.3em;
+  }
+
+  #pelialue {
+  top: 0px !important;
+  width: 100%;
+  height: 100%;
+  border: none;
+  }
+
+  #pistetaso {
+    font-size: 3rem;
+  }
+
+  button {
+    margin: 10px 20px;
+  }
+}
+
+/* Mobiilit 576 ---------------------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+
+  .valikko {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    height: 150px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    opacity: .95;
+  }
+
+  .valikko-radiorivi {
+    display: block;
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 260px;
+    height: 45px;
+    padding: 10px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    opacity: .95;
+  }
+
+  .mobiili {
+    display: block;
+    line-height: .1em;
+  }
+
+    .logo {
+    animation: none !important;
+    z-index: 2;
+    margin: 0px;
+    width: 120%;
+    height: 90%;
+    transform: translateX(-50%) translateY(-90%);
+  }
+
+  .logo-loppu {
+    animation: none !important;
+    z-index: 2;
+    margin: 0px;
+    width: 250%;
+    height: 160%;
+    transform: scale(.45) translate(-110%, -180%);
+  }
+
+  .pklogo {
+    position: absolute;
+    width: 8%;
+    top: 98%;
+    right: 2px;
+    animation: none !important;
+  }
+
+  .uusipeli-ruutu {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    background-color: #178a77;
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .ohje {
+    font-size: 1.2em;
+  }
+
+    #loppupisteet, #lopputaso {
+    display: inline;
+    margin:0px 40px;
+    font-size: 2em;
+    line-height: .7em
+    }
+
+  .lopputxt-vasen {
+    margin: 2px;
+    padding: 20px 20px 10px 20px;
+    font-size: 1.3em;
+  }
+  
+  .lopputxt-oikea {
+    margin: 2px;
+    padding: 20px 20px 10px 0px;
+    font-size: 1.3em;
+  }
+
+  #pelialue {
+    top: 0px !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    }
+  
+  #pistetaso {
+    font-size: 2rem;
+  }
+
+  button {
+    margin: 10px 20px;
+  }
+}

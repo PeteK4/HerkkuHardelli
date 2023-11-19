@@ -1,0 +1,72 @@
+<!-- 
+Music: https://www.purple-planet.com
+Song name: Sneaky Feet - Category: Playfull
+Licence: https://www.purple-planet.com/using-our-free-music
+// Game over musiikki: https://www.zapsplat.com
+-->
+
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./kuvat/torttu.ico" type=".//x-icon">
+    <title>HerkkuHärdelli</title>
+</head>
+
+<body>
+    <div id="pelialue">
+        <div id="pistetaso">
+            <span>Pisteet: <span id="pisteet">0</span></span>
+            <span>Taso: <span id="taso">1</span></span>
+        </div>
+
+        <div class="valikko">
+            <img class="logo" src="./kuvat/logo.webp" alt="">
+            <p class="ohje">Nappaa herkut kiinni ennenkuin ne karkaa!</p>
+            <button onclick="alustaPeli()">Aloita</button>
+        </div>
+
+        <div class="valikko-radiorivi">
+            Musiikki:
+            <input type="radio" id="musiikki-on" name="musiikki" onclick="musiikkiOnOff(true)">
+            <label id="cr" for="musiikki-on">Päällä</label>
+            <input type="radio" id="musiikki-off" name="musiikki" checked onclick="musiikkiOnOff(false)">
+            <label id="cr" for="musiikki-off">Pois</label>
+            <div class="mobiili"><br></div>
+            <span class="mobiili-vali">Pelin äänet:</span>
+            <input type="radio" id="aanet-on" name="aanet">
+            <label id="cr" for="aanet-on">Päällä</label>
+            <input type="radio" id="aanet-off" name="aanet" checked>
+            <label id="cr" for="aanet-off">Pois</label>
+        </div>
+
+        <div class="uusipeli-ruutu">
+            <img class="logo-loppu" src="./kuvat/logo.webp" alt="">
+            <div class="loppuinfo">
+                <div class="vasen">
+                    <p class="lopputxt-vasen">Pisteet:</p>
+                    <p id="loppupisteet"></p>
+                </div>
+                <div class="oikea">
+                    <p class="lopputxt-oikea">Tasolla:</p>
+                    <p id="lopputaso"></p>
+                </div>
+            </div>
+            <button style="margin-top: 40px; " onclick="alustaPeli()">Uusi peli</button>
+            <button onclick="etuSivu()">Etusivu</button>
+        </div>
+        <img class="pklogo" src="./kuvat/petek_logo.webp" alt="">
+        <span class="musiikki-info">Musiikki: https://www.purple-planet.com - Sneaky Feet | Game over musiikki: https://www.zapsplat.com</span>
+    </div>
+
+    <audio id="musiikki" loop>
+        <source src="./audio/Sneaky_Feet.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="./scriptit/animaatiot.js"></script>
+    <script src="./scriptit/peli.js"></script>
+</body>
+</html>
