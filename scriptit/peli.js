@@ -216,7 +216,7 @@ function peliOhi() {
     // Soitetaan loppufanfaari, jos musiikit on päällä
     musiikkiOnOff(false);
     if (document.querySelector('input[name="musiikki"]:checked').id == "musiikki-on") {
-        new Audio("./audio/aaniGameOver.mp3").play(); 
+        new Audio("./audio/GameOver.mp3").play(); 
     }
     // Tyhjennetään pelialue, sytytellään ja sammutellaan elementtejä pelialueella
     // Arvotaan uusi pelialueen taustakuva, nollataan ajastin
