@@ -130,10 +130,10 @@ function uusiLeivos() {
 
     // Seurataan hiiren toimintoja
     leivos.addEventListener("click", (event) => {
-        tahti(event); // luodaan .gif animaatio klikatun leivoksen kohdalle
         
         // Pelitilan toiminnot, kun ei olla alkuvalikossa
         if (!valikko) {
+            tahti(event); // luodaan .gif animaatio klikatun leivoksen kohdalle
             // Äänet valitaan kolmesta vaihtoehdosta, jos äänet on valittu päälle
             if (document.querySelector('input[name="aanet"]:checked').id == "aanet-on") {
                 new Audio(`./audio/${tiedostoNimetAani[Math.floor(Math.random() * tiedostoNimetAani.length)]}.mp3`).play(); 
