@@ -234,7 +234,7 @@ function peliOhi() {
         if (document.querySelector('input[name="musiikki"]:checked').id == "musiikki-on") {
         setTimeout(function() {
             musiikkiOnOff(true);
-        }, 5555);
+        }, 6000);
     }
 }
 
