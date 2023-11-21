@@ -1,20 +1,24 @@
-// Scrollataan pelialue ylhäältä alas sivun avautuessa
-
 window.addEventListener("DOMContentLoaded", () => {
   const pelialue = document.getElementById("pelialue");
 
-// Määäritetään scrollausmatkanpää riippuen ruudun koosta
+  // Määritetään scrollausmatkanpää riippuen ruudun koosta
   let loppupiste = 120;
   if (window.innerWidth < 992) {
     loppupiste = 0;
   }
 
-  const alkupiste = -pelialue.offsetHeight - 600;
-  pelialue.style.display = "flex"
-  pelialue.style.top = `${alkupiste}px`;
+  // Aloituspiste ja elementti näkyviin
+  pelialue.style.top = `${-pelialue.offsetHeight - 700}px`;
+  pelialue.style.opacity = "0";
+  pelialue.style.display = "flex";
 
+  // Liike 
   setTimeout(() => {
-    pelialue.style.transition = "top 1s";
-    pelialue.style.top = `${loppupiste}px`;
-  }, 100);
+    // Liike 
+    requestAnimationFrame(() => {
+      pelialue.style.transition = "top 1s ease-out, opacity 1.3s ease-in-out";
+      pelialue.style.top = `${loppupiste}px`;
+      pelialue.style.opacity = "1";
+    });
+  }, 500); // Aseta tarvittava aikaviive millisekunteina
 });
