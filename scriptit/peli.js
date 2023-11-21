@@ -42,9 +42,6 @@ let minfoGameover = true;
 musiikki.volume = 0.5;
 
 peliAlue.style.cursor = "url('./kuvat/nuoli.webp'), auto"; // Oma hiirenkohdistin
-if (screen.orientation) {
-    screen.orientation.lock('portrait');
-}
 
 // Määritetään näkyvät ja poistuvat elementit sekä muuttujat pelin alkaessa
 function alustaPeli() {
