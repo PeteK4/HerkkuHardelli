@@ -126,7 +126,7 @@ function uusiLeivos() {
     leivos.draggable = false; // Poistetaan kuvien raahausmahdollisuus
 
     // Seurataan hiiren toimintoja
-    leivos.addEventListener("click", (event) => {
+    leivos.addEventListener("mousedown", (event) => {
         
         // Pelitilan toiminnot, kun ei olla alkuvalikossa
         if (!valikko) {
