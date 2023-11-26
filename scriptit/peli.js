@@ -86,7 +86,7 @@ function paaOhjelma() {
     for (let i = 0; i < leivosMaara; i++) {
         uusiLeivos();
     }
-    // Pienennetään ruudulla olvia leivoksia ja seurataan niiden kokoa
+    // Pienennetään ruudulla olevia leivoksia ja seurataan niiden kokoa
     // Ajastin määrittää pelin kokonaisnopeuden
     ajastin = setInterval(() => {
         leivosLista.forEach((leivosKuva, i) => {
